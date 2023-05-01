@@ -45,6 +45,7 @@ public:
 	void Fill(EscEscape& e);
 	void SetBackground(EscEscape& e);
 	void Rect(EscEscape& e);
+	void RoundRect(EscEscape& e);
 	void Circle(EscEscape& e);
 	void Ellipse(EscEscape& e);
 	void Text(EscEscape& e);

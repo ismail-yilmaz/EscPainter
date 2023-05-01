@@ -14,7 +14,7 @@ struct EscAnimator : TopWindow {
 	CodeEditor edit;
 	ZoomableImageCtrl  ictl;
 
-   enum TimerIds { TIMEID_REFRESH = Ctrl::TIMEID_COUNT, TIMEID_COUNT };
+    enum TimerIds { TIMEID_REFRESH = Ctrl::TIMEID_COUNT, TIMEID_COUNT };
 	
 	EscAnimator()
 	{

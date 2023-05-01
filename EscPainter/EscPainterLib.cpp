@@ -218,6 +218,7 @@ ESC_Painter::ESC_Painter(EscValue& v, Painter& w_, Size sz)
 		v.Escape("Arc(...)", this, THISFN(Arc));
 		v.Escape("Path(x)",	this, THISFN(Path));
 		v.Escape("Rectangle(...)", this, THISFN(Rect));
+		v.Escape("RoundedRectangle(...)", this, THISFN(RoundRect));
 		v.Escape("GetSize()", this, THISFN(GetSize));
 		v.Escape("GetRect()", this, THISFN(GetRect));
 		v.Escape("GetCenterPoint()", this, THISFN(GetCenterPos));
@@ -446,6 +447,53 @@ void ESC_Painter::Rect(EscEscape& e)
 	else
 		e.ThrowError("wrong number of arguments in call to 'Rectangle'");
 	e = e.self;
+}
+
+void ESC_Painter::RoundRect(EscEscape& e)
+{
+	if(e.GetCount() == 2) {
+		Rectf r = ToRectf(e[0]);
+		w.RoundedRectangle(
+			r.left,
+			r.top,
+			r.Width(),
+			r.Height(),
+			e[1].GetNumber());
+	}
+	else
+	if(e.GetCount() == 3) {
+		Rectf r = ToRectf(e[0]);
+		w.RoundedRectangle(
+			r.left,
+			r.top,
+			r.Width(),
+			r.Height(),
+			e[1].GetNumber(),
+			e[2].GetNumber());
+	}
+	else
+	if(e.GetCount() == 5) {
+		w.RoundedRectangle(
+			e[0].GetNumber(),
+			e[1].GetNumber(),
+			e[2].GetNumber(),
+			e[3].GetNumber(),
+			e[4].GetNumber());
+	}
+	else
+	if(e.GetCount() == 6) {
+		w.RoundedRectangle(
+			e[0].GetNumber(),
+			e[1].GetNumber(),
+			e[2].GetNumber(),
+			e[3].GetNumber(),
+			e[4].GetNumber(),
+			e[5].GetNumber());
+	}
+	else
+		e.ThrowError("wrong number of arguments in call to 'RoundedRectangle'");
+	e = e.self;
+
 }
 
 void ESC_Painter::Circle(EscEscape& e)
