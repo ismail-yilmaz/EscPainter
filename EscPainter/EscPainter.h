@@ -18,7 +18,6 @@ Color    ToColor(EscValue v);
 Rectf    ToRectf(EscValue v);
 Sizef    ToSizef(EscValue v);
 Pointf   ToPointf(EscValue v);
-Image    ToImage(EscValue v);
 
 class ESC_Painter : public EscHandle {
 public:
@@ -41,6 +40,7 @@ public:
 	void Line(EscEscape& e);
 	void Arc(EscEscape& e);
 	void Path(EscEscape& e);
+	void BeginOnPath(EscEscape& e);
 	void Stroke(EscEscape& e);
 	void Fill(EscEscape& e);
 	void SetBackground(EscEscape& e);
@@ -49,6 +49,7 @@ public:
 	void Circle(EscEscape& e);
 	void Ellipse(EscEscape& e);
 	void Text(EscEscape& e);
+	void Character(EscEscape& e);
 
 public:
 	typedef ESC_Painter CLASSNAME;
@@ -61,6 +62,7 @@ private:
 };
 
 void  PainterLib(ArrayMap<String, EscValue>& global);
+
 void  EscPaint(ArrayMap<String, EscValue>& global, Painter& w, Size sz);
 void  EscPaint(ArrayMap<String, EscValue>& global, Painter& w, int cx, int cy);
 
