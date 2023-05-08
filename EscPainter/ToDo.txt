@@ -13,7 +13,7 @@ DONE:
     MiterLimit(l) 
     EvenOdd(b)
     Invert(b)
-    Background(color)
+    Clear(color)
     Stroke(...)
     Fill(...)
     Dash(...)
