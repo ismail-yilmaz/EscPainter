@@ -33,6 +33,7 @@ DONE:
     Ellipse(...)
     Arc(...)
     Path(x)
+    RectPath(...)
     Cubic(...)
     Quadratic(...)
     BeginOnPath(...)
