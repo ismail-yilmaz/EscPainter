@@ -48,7 +48,7 @@ struct EscAnimator : TopWindow {
 				ictl.img = EscPaintImage(global, edit.Get(), ictl.GetSize());
 				ictl.Refresh();
 			}
-			catch(CParser::Error e)
+			catch(const CParser::Error& e)
 			{
 				RLOG(e);
 			}
