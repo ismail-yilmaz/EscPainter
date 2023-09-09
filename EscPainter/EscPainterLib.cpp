@@ -920,5 +920,27 @@ Image EscPaintImage(ArrayMap<String, EscValue>& global, const String& script, in
 	return EscPaintImage(global, script, Size(cx, cy));
 }
 
+void EscDraw(ArrayMap<String, EscValue>& global, Draw& w, Size sz)
+{
+	DrawPainter dp(w, sz);
+	EscPaint(global, dp, sz);
+}
+
+void EscDraw(ArrayMap<String, EscValue>& global, Draw& w, int cx, int cy)
+{
+	EscDraw(global, w, Size(cx, cy));
+}
+
+void EscDraw(ArrayMap<String, EscValue>& global, const String& script, Draw& w, Size sz)
+{
+	DrawPainter dp(w, sz);
+	Scan(global, script);
+	EscPaint(global, dp, sz);
+}
+
+void EscDraw(ArrayMap<String, EscValue>& global, const String& script, Draw& w, int cx, int cy)
+{
+	EscDraw(global, script, w, Size(cx, cy));
+}
 
 }

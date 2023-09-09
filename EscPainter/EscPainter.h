@@ -85,5 +85,10 @@ Image EscPaintImage(ArrayMap<String, EscValue>& global, int cx, int cy);
 Image EscPaintImage(ArrayMap<String, EscValue>& global, const String& script, Size sz);
 Image EscPaintImage(ArrayMap<String, EscValue>& global, const String& script, int cx, int cy);
 
+void  EscDraw(ArrayMap<String, EscValue>& global, Draw& w, Size sz);
+void  EscDraw(ArrayMap<String, EscValue>& global, Draw& w, int cx, int cy);
+void  EscDraw(ArrayMap<String, EscValue>& global, const String& script, Draw& w, Size sz);
+void  EscDraw(ArrayMap<String, EscValue>& global, const String& script, Draw& w, int cx, int cy);
+
 }
 #endif

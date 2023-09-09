@@ -46,7 +46,7 @@ DONE:
     Character(...)
     GetTextSize(...)
     RenderSVG(svg)
-
++ Painter to Draw interface.
 + Example demonstrating a static image.
 + Example demonstrating a simple animation.
 
