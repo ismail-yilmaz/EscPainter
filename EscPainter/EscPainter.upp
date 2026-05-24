@@ -13,6 +13,7 @@ file
 	Macros.i,
 	Info readonly separator,
 	ToDo.txt,
+	Copying,
 	Docs readonly separator,
 	src.tpp;
 
